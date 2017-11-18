@@ -64,6 +64,7 @@ exports.handler = function(event, context, callback) {
                         response = response.slice(-5)
                         responseText = "Your activity is: "
                         response.forEach(function(element,index) {
+                            console.log("element", element)
                             responseText = responseText + " New  " + element.type + " " + element.title + ";"
                         })
                     } else {

@@ -64,7 +64,7 @@ exports.handler = function(event, context, callback) {
                         response = response.slice(-5)
                         responseText = "Your activity is: "
                         response.forEach(function(element) {
-                            responseText = responseText + " New  " + element.type + " " + element.title
+                            responseText = responseText + " New  " + element.type + " " + element.title + ";"
                         })
                     } else {
                         responseText = "Recent actvity response check failed"

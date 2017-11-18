@@ -21,9 +21,9 @@ exports.handler = function(event, context, callback) {
                         }
                         response.forEach(function(element, index) {
                             if (element) {
-                              responseText = responseText + ' Assignment ' + (index + 1) + ' on ';
-                              responseText = responseText + element.assignment.name + ' on ';
-                              responseText = responseText + moment(element.assignment.due_at).format('MMMM Do h:mm:ss a') + ' ';
+                              responseText = responseText + ' Assignment ' + (index + 1) + '; on ';
+                              responseText = responseText + moment(element.assignment.due_at).format('MMMM Do h:mm:ss a') + ' ; ';
+                              responseText = responseText + element.assignment.name;
                             }
                         })
                     } else {

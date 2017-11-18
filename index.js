@@ -94,7 +94,7 @@ exports.handler = function(event, context, callback) {
         })
     } 
     else {
-        callback(null, apiRequests.getAlexaText("Intent not found"))
+        callback(null, apiRequests.getAlexaText("You can ask me about your grades, courses, what you need to do, whats in your inbox, recent activity, and your activity summary."))
         console.log('Intent not found')
     }
 }

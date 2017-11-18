@@ -63,7 +63,7 @@ exports.handler = function(event, context, callback) {
                     if (response) {
                         response = response.slice(-5)
                         responseText = "Your activity is: "
-                        response.forEach(function(element) {
+                        response.forEach(function(element,index) {
                             responseText = responseText + " New  " + element.type + " " + element.title + ";"
                         })
                     } else {

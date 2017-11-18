@@ -28,7 +28,7 @@ exports.handler = function(event, context, callback) {
                               responseText = responseText + " it has " + element.assignment.points_possible + " points possible; ";
                             }
                         })
-                        resonseText = responseText + ' You should stop procrastinating.";
+                        resonseText = responseText + ' You should stop procrastinating.' ;
                     } else {
                         responseText = "Grades response check failed"
                     }

@@ -46,6 +46,7 @@ exports.handler = function(event, context, callback) {
                         response.forEach(function(element) {
                             responseText = responseText + " " + element.name + " ;";
                         })
+                        responseText = responseText + "Wow; That is a lot of courses;"
                     } else {
                         responseText = "Courses response check failed"
                     }

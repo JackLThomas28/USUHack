@@ -77,7 +77,7 @@ exports.handler = function(event, context, callback) {
                         var count = 0
                         response.forEach(function(element) {
                             count += 1
-                            responseText = responseText + " message " + count + "; " + element.subject + " from " + element.participants[0].name
+                            responseText = responseText + " message " + count + "; " + element.subject + " from " + element.participants[0].name + ";"
                         })
                     }
                     break;

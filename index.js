@@ -24,7 +24,7 @@ exports.handler = function(event, context, callback) {
                               responseText = responseText + ' Assignment ' + (index + 1) + '; on ';
                               responseText = responseText + moment(element.assignment.due_at).format('MMMM Do h:mm:ss a') + ' ; ';
                               responseText = responseText + element.assignment.name + ';';
-                              responseText = responseText + " it has " + element.assignment.points_possible " points possible; ";
+                              responseText = responseText + " it has " + element.assignment.points_possible + " points possible; ";
                             }
                         })
                     } else {

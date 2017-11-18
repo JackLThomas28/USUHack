@@ -67,15 +67,17 @@ exports.handler = function(event, context, callback) {
                             responseText = responseText + " New  " + element.type + " " + element.title
                         })
                     } else {
-                        responseText = "Activity summary response check failed"
+                        responseText = "Recent actvity response check failed"
                     }
                     break;
                 case 'InboxIntent':
                     if (response) {
                         response = response.slice(-5)
-                        responseText = "You have " + response.length + " messages"
+                        responseText = "You have " + response.length + " messages;"
+                        var count = 0
                         response.forEach(function(element) {
-                            responseText = " " + responseText + element.subject + " from " + element.participants[0].name
+                            count += 1
+                            responseText = responseText + " message " + count + "; " + element.subject + " from " + element.participants[0].name
                         })
                     }
                     break;

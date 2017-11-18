@@ -34,7 +34,7 @@ exports.handler = function(event, context, callback) {
                     if (response) {
                         response.forEach(function(element) {
                             if (element.enrollments[0] && element.enrollments[0].computed_current_score) {
-                                responseText = responseText + " Your grade in " + apiRequests.gradeParser(element.name) + " is " + element.enrollments[0].computed_current_score;                                
+                                responseText = responseText + " Your grade in " + apiRequests.gradeParser(element.name) + " is " + element.enrollments[0].computed_current_score + ";";                                
                             }
                         })
                     } else {
@@ -44,7 +44,7 @@ exports.handler = function(event, context, callback) {
                 case 'CoursesIntent':
                     if (response) {
                         response.forEach(function(element) {
-                            responseText = responseText + " " + element.name + " ";
+                            responseText = responseText + " " + element.name + " ;";
                         })
                     } else {
                         responseText = "Courses response check failed"

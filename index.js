@@ -19,8 +19,9 @@ exports.handler = function(event, context, callback) {
                         } else {
                           responseText = responseText + ' They are, ';
                         }
-                        response.forEach(function(element) {
+                        response.forEach(function(element, index) {
                             if (element) {
+                              responseText = 'Assignment ' + (index + 1) + ' on ';
                               responseText = responseText + element.assignment.name + ' on ';
                               responseText = responseText + moment(element.assignment.due_at).format('MMMM Do h:mm:ss a') + ' ';
                             }

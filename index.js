@@ -3,6 +3,7 @@ var apiRequests = require('./apiRequests')
 var moment = require('moment');
 
 exports.handler = function(event, context, callback) {
+ console.log('event = ', JSON.stringify(event));
 //var tempHandler = function(event, context, callback) {
     var intentType = null
     if (event.request && event.request.intent && event.request.intent.name) {

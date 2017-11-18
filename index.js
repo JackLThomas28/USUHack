@@ -1,21 +1,28 @@
 
 var apiRequests = require('./apiRequests')
+var moment = require('moment');
 
 exports.handler = function(event, context, callback) {
+//var tempHandler = function(event, context, callback) {
     var intentType = null
     if (event.request && event.request.intent && event.request.intent.name) {
         intentType = event.request.intent.name
         var requestOptions = apiRequests.getOptions(apiRequests.getIntentURL(intentType))
         apiRequests.get(requestOptions, function(response) {
-            console.log(intentType, response)
-            
             var responseText = "";
             switch(intentType) {
                 case 'ToDoIntent':
                     if (response) {
+                        responseText = 'You have ' + response.length + ' assignments due soon.';
+                        if (response.length == 0) {
+                          responseText = responseText + ' Good job!';
+                        } else {
+                          responseText = responseText + ' They are, ';
+                        }
                         response.forEach(function(element) {
-                            if (element.enrollments[0] && element.enrollments[0].computed_current_score) {
-                                responseText = responseText + " Your grade in " + element.name + " is " + element.enrollments[0].computed_current_score;                                
+                            if (element) {
+                              responseText = responseText + element.assignment.name + ' on ';
+                              responseText = responseText + moment(element.assignment.due_at).format('MMMM Do h:mm:ss a') + ' ';
                             }
                         })
                     } else {
@@ -80,3 +87,17 @@ exports.handler = function(event, context, callback) {
         console.log('Intent not found')
     }
 }
+
+//let e = {
+//  request:
+//  {
+//    intent: {
+//      name: 'ToDoIntent'
+//    }
+//  }
+//}
+//
+//tempHandler(e, {}, function(a, b) {
+//  console.log('a', a)
+//  console.log('b', b)
+//})

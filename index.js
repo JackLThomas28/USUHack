@@ -39,6 +39,7 @@ exports.handler = function(event, context, callback) {
                                 responseText = responseText + " Your grade in " + apiRequests.gradeParser(element.name) + " is " + element.enrollments[0].computed_current_score + ";";                                
                             }
                         })
+                        responseText = responseText + " Shame! Shame! ;"
                     } else {
                         responseText = "Grades response check failed"
                     }

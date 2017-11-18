@@ -23,7 +23,7 @@ exports.handler = function(event, context, callback) {
                             if (element) {
                               responseText = responseText + ' Assignment ' + (index + 1) + '; on ';
                               responseText = responseText + moment(element.assignment.due_at).format('MMMM Do h:mm:ss a') + ' ; ';
-                              responseText = responseText + element.assignment.name;
+                              responseText = responseText + element.assignment.name + ';';
                             }
                         })
                     } else {

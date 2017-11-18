@@ -62,7 +62,7 @@ apiRequests.getIntentURL = function(intentType) {
             return 'users/self/activity_stream/summary';
         case 'RecentActivityIntent':
             // https://canvas.instructure.com/api/v1/users/self/activity_stream
-            return 'users/self/activity_stream/summary';
+            return 'users/self/activity_stream/';
         default:
             break;
     }

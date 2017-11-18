@@ -52,7 +52,6 @@ exports.handler = function(event, context, callback) {
                     break;
                 case 'ActivitySummaryIntent':
                     if (response) {
-                        console.log("response", response)
                         response.forEach(function(element) {
                             responseText = responseText + " You have " + element.count + " " + element.type + "s " + element.unread_count + " unread.";
                         })
@@ -62,6 +61,7 @@ exports.handler = function(event, context, callback) {
                     break;
                 case 'RecentActivityIntent':
                     if (response) {
+                        console.log("response", response)                        
                         response = response.slice(-5)
                         responseText = "Your activity is: "
                         response.forEach(function(element,index) {
